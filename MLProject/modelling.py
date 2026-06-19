@@ -35,6 +35,6 @@ with mlflow.start_run():
     print("Training model for CI...")
     model.fit(X_train[:100], y_train[:100], epochs=1, batch_size=32)
 
-    # Save model explicitly so workflow can find it
-    mlflow.tensorflow.log_model(model, "lstm_model")
+    # Save model explicitly so workflow can find it and use our custom conda.yaml
+    mlflow.tensorflow.log_model(model, "lstm_model", conda_env="conda.yaml")
     print("Training finished.")
