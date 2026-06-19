@@ -31,7 +31,7 @@ jobs:
         run: |
           cd MLProject
           pip install -r conda.yaml || echo "Using conda.yaml for MLflow"
-          pip install pandas numpy scikit-learn tensorflow
+          pip install pandas numpy scikit-learn tensorflow tensorboard
           python modelling.py
 
       - name: Build Docker image with MLflow

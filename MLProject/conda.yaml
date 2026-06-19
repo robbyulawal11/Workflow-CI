@@ -9,4 +9,5 @@ dependencies:
       - numpy
       - scikit-learn
       - tensorflow
+      - tensorboard
       - mlflow==2.19.0
