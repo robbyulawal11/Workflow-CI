@@ -27,9 +27,8 @@ jobs:
       - name: Run mlflow project
         run: |
           cd MLProject
-          pip install -r conda.yaml || echo "Using conda.yaml for MLflow"
           pip install pandas numpy scikit-learn tensorflow tensorboard
-          python modelling.py
+          mlflow run . --env-manager=local
 
       - name: Get latest MLflow run_id
         run: |
