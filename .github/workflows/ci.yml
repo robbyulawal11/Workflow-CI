@@ -39,7 +39,7 @@ jobs:
           cd MLProject
           # Assume the model is saved to mlruns/0/RUN_ID/artifacts/model
           RUN_ID=$(ls mlruns/0 | grep -v meta.yaml | head -n 1)
-          mlflow models build-docker -m mlruns/0/$RUN_ID/artifacts/lstm_model -n ${{ secrets.DOCKERHUB_USERNAME }}/pln-forecasting-model:latest
+          mlflow models build-docker -m mlruns/0/$RUN_ID/artifacts/lstm_model -n ${{ secrets.DOCKERHUB_USERNAME }}/pln-forecasting-model:latest --env-manager conda
 
       - name: Push Docker image
         run: |
